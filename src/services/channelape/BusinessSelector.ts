@@ -5,7 +5,7 @@ export default class BusinessSelector {
   public static getQuestion(channelApeClient: ChannelApeClient): Promise<inquirer.Question> {
     return channelApeClient.sessions().get(channelApeClient.SessionId)
       .then((session) => {
-         return channelApeClient.businesses().get({ userId: session.userId });
+        return channelApeClient.businesses().get({ userId: session.userId });
       })
       .then((businesses) => {
         return this.getInquirerBusinessQuestion(businesses);
@@ -15,7 +15,7 @@ export default class BusinessSelector {
   private static getInquirerBusinessQuestion(businesses: Business[]): inquirer.Question {
     return {
       name: 'businesses',
-      message: 'Choose each business you which to monitor',
+      message: 'Choose each business you wish to monitor',
       type: 'checkbox',
       choices: this.getInquirerBusinessChoices(businesses)
     };
@@ -26,7 +26,7 @@ export default class BusinessSelector {
       return {
         name: `${b.name} <${b.id}>`,
         value: b
-      }
+      };
     });
   }
 }

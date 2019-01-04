@@ -39,6 +39,12 @@ inquirer.prompt([
   }
   inquirer.prompt(SupplierAndChannelSelector.getQuestion(suppliers, channels, answers.businesses))
     .then((answers) => {
-      answers;
+      startMonitors(answers.suppliersAndChannels);
     });
 });
+
+async function startMonitors(suppliersAndChannels: (Supplier | Channel)[]): Promise<any> {
+  suppliersAndChannels.forEach((supplierOrChannel) => {
+    console.log(supplierOrChannel.name);
+  });
+}

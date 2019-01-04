@@ -34,7 +34,7 @@
   "dependencies": {
     "@types/q": "^1.5.1",
     "channelape-logger": "^0.1.5",
-    "channelape-sdk": "channelape-sdk-1.6.0-develop.0.zip",
+    "channelape-sdk": "./channelape-sdk-1.6.0-develop.0",
     "inquirer": "^6.2.1"
   },
   "devDependencies": {
